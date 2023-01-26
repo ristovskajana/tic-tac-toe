@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tic Tac Toe</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css-light.css" title="light">
+	<link rel="alternate stylesheet" type="text/css" href="css-dark.css" title="dark">  <!-- alternate stylesheet so we can change to dark mode-->
+	<link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap" rel="stylesheet"> <!-- google font-->
+	<script type="text/javascript">
+		function unblur()
+		{
+		    var tttblured=document.getElementById("tic-tac-toe-blured");
+		    tttblured.class="tic-tac-toe";
+		    tttblured.id="tic-tac-toe";   //changing class name so the div gets unblurred
+		    tttblured.className="tic-tac-toe";
+		    deleteItem('center-button');  //then removing the start button
+		    function deleteItem (id) {
+      		var item = document.getElementById(id);
+      		item.parentNode.removeChild(item)
+   			}
+
+		}
+	</script>
+	<!-- <script type="text/javascript">
+		function setActiveStyleSheet(title) {
+		   var i, a, main;
+		   HTMLLinkElement.getAttribute("rel").indexOf("style") != -1;
+		   HTMLListElement.getAttribute("title");
+		   for(i=0; (a = document.getElementsByTagName("link")<i>); i++) {
+		     if(a.getAttribute("rel").indexOf("style") != -1
+		        && a.getAttribute("title")) {
+		       a.disabled = true;
+		       if(a.getAttribute("title") == title) a.disabled = false;
+		     }
+		   }
+		}
+	</script> -->
+
+</head>
+<body>
+	<header>
+		<h1><a href = "Start.html">Tic Tac Toe</a></h1>
+		<h2>Press Start to begin the game</h2>
+	</header>
+	<section>
+		<nav>
+			<ul class="main-ul">
+				<li>Change Difficulty:<hr>
+					<ul>
+						<li style="list-style-image: url('easy.png')"><a href="TicTacToeEasy.html">Easy</a></li>
+						<li style="list-style-image: url('medium.png')"><a href="TicTacToeEasy.html">Medium</a></li>
+						<li style="list-style-image: url('hard.png')"><a href="TicTacToeHard.html">Hard</a></li>
+					</ul>
+				</li><br>
+				<li>Opponent Options:<hr>
+					<ul>
+						<li style="list-style-image: url('2players.png')">2 Players</li>
+						<li style="list-style-image: url('computer.png')">Against Computer</li>
+					</ul>
+				</li><br>
+				<li>Choose Mode:<hr>
+					<ul>
+						<li style="list-style-image: url('light.png')"><button class="mode" onclick="setActiveStyleSheet('light')">Light Mode</button ></li>
+						<li style="list-style-image: url('dark.png')"><button class="mode" onclick="setActiveStyleSheet('dark')">Dark Mode</button ></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+		<article>
+			<div class="tic-tac-toe-blured" id="tic-tac-toe-blured">
+				<br>
+				<table>
+					<tr>
+						<td class="cell" id="0"></td>
+						<td class="cell" id="1"></td>
+						<td class="cell" id="2"></td>
+					</tr>
+					<tr>
+						<td class="cell" id="3"></td>
+						<td class="cell" id="4"></td>
+						<td class="cell" id="5"></td>
+					</tr>
+					<tr>
+						<td class="cell" id="6"></td>
+						<td class="cell" id="7"></td>
+						<td class="cell" id="8"></td>
+					</tr>
+				</table>
+			</div>
+			<div class="center-button" id = "center-button"><button class="start-button" id="start-button" onclick="unblur()">Start</button></div>
+			
+		</article>
+		<div class="leaderboard">
+			<table class="lead">
+				<caption>Leaderboard:</caption>
+				<tr>
+					<td class="name">Name</td>
+					<td class="score">Score</td>
+				</tr>
+				<tr>
+					<td class="name"></td>
+					<td class="score"></td>
+				</tr>
+				<tr>
+					<td class="name"></td>
+					<td class="score"></td>
+				</tr>
+				<tr>
+					<td class="name"></td>
+					<td class="score"></td>
+				</tr>
+				<tr>
+					<td class="name"></td>
+					<td class="score"></td>
+				</tr>
+				<tr>
+					<td class="name"></td>
+					<td class="score"></td>
+				</tr>
+				<tr>
+					<td class="name"></td>
+					<td class="score"></td>
+				</tr>
+			</table>
+		</div>
+		<div class="endgame">
+			<div class="text"></div>
+			<div>
+				<button class= "replay" onclick="startGame()">Replay</button>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<a href="Start.html">Menu</a> |
+		<a href="TicTacToeEasy.html" class="active">Game</a> |
+		<a href="About.html">About</a> 
+	</footer>
+
+	<script src="easy.js"></script>
+</body>
+</html>
